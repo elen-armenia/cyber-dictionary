@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+    <meta charset="UTF-8">
+    <title>Elen's Cyber Codex</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Noto+Serif+Armenian:wght@400;700&family=IM+Fell+English:ital@0;1&display=swap');
+
+        :root {
+            --bg: #0a0a0a;
+            --paper: #1a1510;
+            --gold: #b39659;
+            --text: #d4c4ab;
+            --accent: #7d6b4a;
+        }
+
+        body {
+            background-color: var(--bg);
+            background-image: url('https://www.transparenttextures.com/patterns/black-linen.png');
+            color: var(--text);
+            font-family: 'Noto Serif Armenian', serif;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .grimoire {
+            max-width: 950px;
+            width: 100%;
+            background: var(--paper);
+            border: 2px solid var(--gold);
+            padding: 60px;
+            box-shadow: 0 0 80px rgba(0,0,0,0.9), inset 0 0 100px rgba(0,0,0,0.5);
+            position: relative;
+        }
+
+        /* Заголовок в стиле 'Legendaire' */
+        h1 {
+            font-family: 'Cinzel Decorative', cursive;
+            text-align: center;
+            font-size: 3.2rem;
+            color: var(--gold);
+            margin: 0 0 10px 0;
+            letter-spacing: 4px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 20px auto 40px;
+            width: 80%;
+        }
+
+        /* Поиск */
+        .search-box {
+            width: 100%;
+            background: rgba(0,0,0,0.4);
+            border: 1px solid var(--accent);
+            padding: 15px 25px;
+            color: var(--gold);
+            font-family: 'IM Fell English', serif;
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+            outline: none;
+            box-sizing: border-box;
+            border-radius: 0;
+            transition: 0.3s;
+        }
+
+        .search-box:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 15px rgba(179, 150, 89, 0.2);
+        }
+
+        /* Категории */
+        h2 {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 1.6rem;
+            color: var(--gold);
+            border-bottom: 1px solid var(--accent);
+            padding-bottom: 10px;
+            margin: 50px 0 30px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .term-card {
+            border-bottom: 1px solid rgba(125, 107, 74, 0.2);
+            padding-bottom: 15px;
+            transition: 0.3s;
+        }
+
+        .term-card:hover {
+            transform: translateX(5px);
+        }
+
+        .eng {
+            font-family: 'IM Fell English', serif;
+            font-size: 1.4rem;
+            color: var(--gold);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .arm {
+            font-weight: 700;
+            color: var(--text);
+            font-size: 1.1rem;
+        }
+
+        .desc {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--accent);
+            margin-top: 8px;
+            line-height: 1.4;
+            font-style: italic;
+        }
+
+        .hidden { display: none; }
+
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+            .grimoire { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="grimoire">
+    <h1>CYBER CODEX</h1>
+    <div class="divider"></div>
+    
+    <input type="text" id="search" class="search-box" placeholder="Search the ancient terms...">
+
+    <div id="dictionary">
+        <section class="cat">
+            <h2>User Accounts & Access <span>Օգտահաշիվներ</span></h2>
+            <div class="grid">
+                <div class="card"><span class="eng">Account</span><span class="arm">հաշիվ</span><span class="desc">Օգտատիրոջ անհատական միջավայրը համակարգում:</span></div>
+                <div class="card"><span class="eng">Username</span><span class="arm">օգտանուն</span><span class="desc">Ինքնության եզակի անվանումը:</span></div>
+                <div class="card"><span class="eng">Password</span><span class="arm">գաղտնաբառ</span><span class="desc">Մուտքի գաղտնի կոդավորումը:</span></div>
+                <div class="card"><span class="eng">Password Manager</span><span class="arm">գաղտնաբառերի կառավարիչ</span><span class="desc">Գաղտնաբառերի անվտանգ պահոց:</span></div>
+                <div class="card"><span class="eng">Login Credentials</span><span class="arm">մուտքային տվյալներ</span><span class="desc">Մուտք գործելու անհրաժեշտ տվյալների փաթեթ:</span></div>
+                <div class="card"><span class="eng">Authentication</span><span class="arm">նույնականացում</span><span class="desc">Ինքնության իսկության հաստատումը:</span></div>
+                <div class="card"><span class="eng">Authorization</span><span class="arm">արտոնությունների տրամադրում</span><span class="desc">Հասանելիության իրավունքների սահմանումը:</span></div>
+                <div class="card"><span class="eng">MFA</span><span class="arm">բազմագործոն նույնականացում</span><span class="desc">Պաշտպանության մի քանի շերտերի կիրառում:</span></div>
+                <div class="card"><span class="eng">2FA</span><span class="arm">երկգործոն նույնականացում</span><span class="desc">Ինքնության հաստատում երկու փուլով:</span></div>
+            </div>
+        </section>
+
+        <section class="cat">
+            <h2>Cybersecurity Basics <span>Հիմունքներ</span></h2>
+            <div class="grid">
+                <div class="card"><span class="eng">Cybersecurity</span><span class="arm">կիբեռանվտանգություն</span><span class="desc">Թվային տիրույթի համակարգված պաշտպանությունը:</span></div>
+                <div class="card"><span class="eng">Security</span><span class="arm">անվտանգություն</span><span class="desc">Պաշտպանվածության ընդհանուր վիճակը:</span></div>
+                <div class="card"><span class="eng">Cyber Hygiene</span><span class="arm">կիբեռ հիգիենա</span><span class="desc">Անվտանգության կանոնավոր սովորույթներ:</span></div>
+                <div class="card"><span class="eng">Privacy</span><span class="arm">գաղտնիություն</span><span class="desc">Անձնական տվյալների անձեռնմխելիությունը:</span></div>
+                <div class="card"><span class="eng">AI</span><span class="arm">Արհեստական բանականություն</span><span class="desc">Ինքնուսուցանվող մեքենայական համակարգեր:</span></div>
+                <div class="card"><span class="eng">Protocol</span><span class="arm">հաղորդակարգ</span><span class="desc">Տվյալների փոխանակման կանոնակարգը:</span></div>
+            </div>
+        </section>
+
+        <section class="cat">
+            <h2>Threats & Attacks <span>Սպառնալիքներ</span></h2>
+            <div class="grid">
+                <div class="card"><span class="eng">Phishing</span><span class="arm">ֆիշինգ</span><span class="desc">Տվյալների գողություն խաբեության միջոցով:</span></div>
+                <div class="card"><span class="eng">Scam</span><span class="arm">խաբեություն</span><span class="desc">Օնլայն խարդախության տեսակ:</span></div>
+                <div class="card"><span class="eng">Spam</span><span class="arm">սպամ</span><span class="desc">Անցանկալի զանգվածային հաղորդագրություններ:</span></div>
+                <div class="card"><span class="eng">Malware</span><span class="arm">վնասակար ծրագիր</span><span class="desc">Համակարգը վնասող ցանկացած ծրագիր:</span></div>
+                <div class="card"><span class="eng">Ransomware</span><span class="arm">դրամաշորթ ծրագիր</span><span class="desc">Տվյալները պատանդ վերցնող վիրուս:</span></div>
+                <div class="card"><span class="eng">Spyware</span><span class="arm">լրտես ծրագիր</span><span class="desc">Գաղտնի հետևող և տվյալներ հավաքող ծրագիր:</span></div>
+                <div class="card"><span class="eng">Worm</span><span class="arm">որդ</span><span class="desc">Ինքնատարածվող վնասակար կոդ:</span></div>
+                <div class="card"><span class="eng">Stealer</span><span class="arm">հափշտակիչ ծրագիր</span><span class="desc">Գաղտնաբառեր և բանկային տվյալներ գողացող ծրագիր:</span></div>
+                <div class="card"><span class="eng">Malicious Link</span><span class="arm">վնասակար հղում</span><span class="desc">Վտանգավոր կայքերին միացնող հասցե:</span></div>
+                <div class="card"><span class="eng">Social Engineering</span><span class="arm">սոցիալական ինժեներիա</span><span class="desc">Մարդկային գործոնի մանիպուլյացիա:</span></div>
+                <div class="card"><span class="eng">Cyber Attack</span><span class="arm">կիբեռ հարձակում</span><span class="desc">Թիրախավորված ներխուժում համակարգ:</span></div>
+                <div class="card"><span class="eng">Threat</span><span class="arm">սպառնալիք</span><span class="desc">Հնարավոր վտանգի աղբյուր:</span></div>
+                <div class="card"><span class="eng">Vulnerability</span><span class="arm">խոցելիություն</span><span class="desc">Պաշտպանության թույլ օղակը:</span></div>
+                <div class="card"><span class="eng">Data Breach</span><span class="arm">տվյալների արտահոսք</span><span class="desc">Տվյալների անօրինական բացահայտումը:</span></div>
+            </div>
+        </section>
+
+        <section class="cat">
+            <h2>Tools & Technologies <span>Գործիքներ</span></h2>
+            <div class="grid">
+                <div class="card"><span class="eng">Firewall</span><span class="arm">հրեպատ</span><span class="desc">Ցանցային տրաֆիկի ֆիլտրման պատնեշ:</span></div>
+                <div class="card"><span class="eng">Antivirus</span><span class="arm">հակավիրուս</span><span class="desc">Վնասակար ծրագրերի հայտնաբերման գործիք:</span></div>
+                <div class="card"><span class="eng">Encryption</span><span class="arm">գաղտնագրում</span><span class="desc">Տվյալների փոխակերպում անընթեռնելի կոդի:</span></div>
+                <div class="card"><span class="eng">Decryption</span><span class="arm">վերծանում</span><span class="desc">Գաղտնագրված տվյալների վերականգնումը:</span></div>
+                <div class="card"><span class="eng">VPN</span><span class="arm">վիրտուալ անձնական ցանց</span><span class="desc">Անանուն և պաշտպանված միացում ցանցին:</span></div>
+                <div class="card"><span class="eng">HTTPS</span><span class="arm">անվտանգ կայք</span><span class="desc">Տվյալների փոխանցման պաշտպանված արձանագրություն:</span></div>
+            </div>
+        </section>
+
+        <section class="cat">
+            <h2>Systems & Software <span>Ծրագրեր</span></h2>
+            <div class="grid">
+                <div class="card"><span class="eng">Operating System</span><span class="arm">օպերացիոն համակարգ</span><span class="desc">Համակարգչի հիմնական կառավարող ծրագիրը:</span></div>
+                <div class="card"><span class="eng">Software</span><span class="arm">ծրագրային ապահովում</span><span class="desc">Համակարգչային ծրագրերի ամբողջությունը:</span></div>
+                <div class="card"><span class="eng">Update | Patch</span><span class="arm">թարմացում</span><span class="desc">Ծրագրի թերությունների ուղղում և լավացում:</span></div>
+                <div class="card"><span class="eng">Browser</span><span class="arm">դիտարկիչ</span><span class="desc">Համացանցում նավարկելու հիմնական ծրագիրը:</span></div>
+                <div class="card"><span class="eng">Public Wi-Fi</span><span class="arm">հանրային Wi-Fi</span><span class="desc">Բաց և հաճախ անպաշտպան ցանցային միացում:</span></div>
+                <div class="card"><span class="eng">Incident</span><span class="arm">միջադեպ</span><span class="desc">Անվտանգության կանոնների խախտման դեպք:</span></div>
+                <div class="card"><span class="eng">Incident Report</span><span class="arm">միջադեպի հաղորդում</span><span class="desc">Տեղի ունեցած խախտման փաստաթղթավորումը:</span></div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script>
+    const searchInput = document.getElementById('search');
+    const cards = document.querySelectorAll('.card');
+    const sections = document.querySelectorAll('.cat');
+
+    searchInput.addEventListener('input', (e) => {
+        const value = e.target.value.toLowerCase();
+        
+        cards.forEach(card => {
+            const text = card.innerText.toLowerCase();
+            card.classList.toggle('hidden', !text.includes(value));
+        });
+
+        sections.forEach(section => {
+            const visibleCards = section.querySelectorAll('.card:not(.hidden)');
+            section.style.display = visibleCards.length > 0 ? 'block' : 'none';
+        });
+    });
+</script>
+
+</body>
+</html>
+
